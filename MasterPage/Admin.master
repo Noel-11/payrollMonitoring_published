@@ -1,0 +1,196 @@
+﻿<%@ Master Language="VB" AutoEventWireup="false" CodeFile="Admin.master.vb" Inherits="MasterPage_Admin" %>
+
+<!DOCTYPE html>
+<%@ Register Src="~/Include/sHeader.ascx" TagName="sHeader" TagPrefix="uc1" %>
+<%@ Register Src="~/Include/sFooter.ascx" TagName="sFooter" TagPrefix="uc3" %>
+<%@ Register Src="~/Include/wucMainMenuBS5.ascx" TagName="wucMainMenu" TagPrefix="uc4" %>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+
+<head runat="server">
+
+    <meta charset="utf-8" />
+    <meta name="robots" content="noindex" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="Shortcut Icon" href="~/Images/favicon.ico" type="image/x-icon" />
+    <title>PMS</title> 
+
+    <%--<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v3.3"></script>--%>
+
+    <asp:ContentPlaceHolder ID="cpHead" runat="server">
+
+        <%--<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" />--%>
+        <%-- <link href="<%=ResolveClientUrl("~/Scripts/Bootstrap5/css/bootstrap.css")%>" rel="stylesheet" />--%>
+
+        <link href="<%=ResolveClientUrl("~/Scripts/Bootstrap5/NavbarTheme/css/styles.css")%>" rel="stylesheet" />
+
+        <link href="<%=ResolveClientUrl("~/Scripts/Bootstrap5/css/bootstrap.min.css")%>" rel="stylesheet" />
+
+        <%-- <link href="<%=ResolveClientUrl("~/Scripts/assets/css/style.bundle.css")%>" rel="stylesheet" />--%>
+
+        <script src="<%=ResolveClientUrl("~/Scripts/Bootstrap5/js/bootstrap.bundle.min.js")%>"></script>
+
+        <link href="<%=ResolveClientUrl("~/Scripts/assets/css/style.bundle.css")%>" rel="stylesheet" />
+
+        <link href="<%=ResolveClientUrl("~/Scripts/mycss/mycss.css")%>" rel="stylesheet" />
+                
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="<%=ResolveClientUrl("~/Scripts/fontAwesome/all.css")%>" />
+        <link rel="stylesheet" href="<%=ResolveClientUrl("~/Scripts/fontAwesome/bootstrap-icons.css")%>" />
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css" />
+
+        <script src="<%=ResolveClientUrl("~/Scripts/myJS/myJs.js")%>"></script>
+
+        <script src="<%=ResolveClientUrl("~/Scripts/Bootstrap5/jquery.min.js")%>"></script>
+        <script src="<%=ResolveClientUrl("~/Scripts/block/blockui.js")%>"></script>
+        <script src="<%=ResolveClientUrl("~/Scripts/Bootstrap5/NavbarTheme/js/scripts.js")%>"></script>
+
+        <script src="<%=ResolveClientUrl("~/Scripts/assets/js/scripts.bundle.js")%>"></script>
+        <script src="https://kit.fontawesome.com/9cfc2a3b54.js" crossorigin="anonymous"></script>
+        
+        <%-- SELECT 2 --%>
+
+        <!-- Styles -->
+        <%-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" />--%>
+        <%--<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/select2-bootstrap-5-theme@1.3.0/dist/select2-bootstrap-5-theme.min.css" />--%>
+
+        <!-- Or for RTL support -->
+        <%--<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/select2-bootstrap-5-theme@1.3.0/dist/select2-bootstrap-5-theme.rtl.min.css" />--%>
+
+        <!-- Scripts -->
+        <%--<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.0/dist/jquery.slim.min.js"></script>--%>
+        <%--<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>--%>
+        <%--<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>--%>
+        
+    </asp:ContentPlaceHolder>
+
+    <style>
+        .modal {
+            overflow:auto !important;
+        }
+
+        .bg-menu {
+            background-color: #6fa5a5;
+            /*background: linear-gradient(to bottom, #306a6ae6, #e7e7e7e8);*/
+        }
+
+
+        .menu-link {
+            color: #000 !important;
+        }
+
+        body {
+            background-color: #FFF !important;
+        }
+    </style>
+
+</head>
+
+<body id="kt_body" class="header-fixed header-tablet-and-mobile-fixed aside-fixed">
+
+    <form id="form1" role="form" method="post" runat="server" autocomplete="off" defaultbutton="btnDoNothing">
+
+        <asp:ScriptManager ID="ScriptManager1" runat="server">
+            <Scripts>
+                <asp:ScriptReference Path="~/Scripts/block/UPBlock.js" />
+            </Scripts>
+        </asp:ScriptManager>
+
+        <asp:Button ID="btnDoNothing" runat="server" Enabled="false" Style="display: none;" />
+        <!--begin::Main-->
+        <div class="d-flex flex-column flex-root">
+            <!--begin::Page-->
+
+            <div class="page d-flex flex-row flex-column-fluid">
+                <div id="kt_aside" class="aside bg-menu" data-kt-drawer="true" data-kt-drawer-name="aside" data-kt-drawer-activate="{default: true, lg: false}" data-kt-drawer-overlay="true" data-kt-drawer-width="{default:'200px', '300px': '250px'}" data-kt-drawer-direction="start" data-kt-drawer-toggle="#kt_aside_toggle" style="z-index: 2;">
+                    <!--start::Aside menu-->
+                    <uc4:wucMainMenu ID="wucMainMenu2" runat="server" />
+                    <!--end::Aside menu-->
+
+                    <!--begin::Footer-->
+                    <div class="aside-footer flex-column-auto px-6 pb-5 text-center" id="kt_aside_footer">
+                        <img src="<%=ResolveClientUrl("~/Images/CDOSeal.png")%>" width="100" class="img-fluid" alt="" />
+                        <div class="text-dark">PAYROLL MANAGEMENT SYSTEM</div>
+                        <div class="col-lg-12 mb-1">
+                            <%-- <div class="input-group">--%>
+                            <asp:Label runat="server" ID="lblDepartment" Font-Names="Arial" Text="Admin" Font-Size="10px" Font-Bold="true" CssClass="text-wrap"></asp:Label>
+                            <%-- </div>--%>
+                        </div>
+                    </div>
+                    <!--end::Footer-->
+
+                </div>
+
+                <!--end::Aside-->
+
+                <!-- Page content wrapper-->
+
+                <div class="wrapper d-flex flex-column flex-row-fluid min-vh-100" id="kt_wrapper">
+
+                    <div id="kt_header" class="header" data-kt-sticky="false" data-kt-sticky-name="header" data-kt-sticky-offset="{default: '100%', lg: '100%'}">
+                        <!--begin::Container-->
+                        <div class="container-fluid d-flex align-items-stretch justify-content-between" id="kt_header_container">
+                            <!--begin::Logo bar-->
+                            <div class="d-flex d-lg-none align-items-center flex-grow-1" style="z-index: 1;">
+                                <!--begin::Aside Toggle-->
+                                <div class="btn btn-icon btn-circle btn-active-light-primary ms-n2 me-1" id="kt_aside_toggle">
+                                    <!--begin::Svg Icon | path: icons/duotone/Text/Menu.svg-->
+                                    <span class="svg-icon svg-icon-2x">
+                                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+                                            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                                <rect x="0" y="0" width="24" height="24" />
+                                                <rect fill="#000000" x="4" y="5" width="16" height="3" rx="1.5" />
+                                                <path d="M5.5,15 L18.5,15 C19.3284271,15 20,15.6715729 20,16.5 C20,17.3284271 19.3284271,18 18.5,18 L5.5,18 C4.67157288,18 4,17.3284271 4,16.5 C4,15.6715729 4.67157288,15 5.5,15 Z M5.5,10 L18.5,10 C19.3284271,10 20,10.6715729 20,11.5 C20,12.3284271 19.3284271,13 18.5,13 L5.5,13 C4.67157288,13 4,12.3284271 4,11.5 C4,10.6715729 4.67157288,10 5.5,10 Z" fill="#000000" opacity="0.3" />
+                                            </g>
+                                        </svg>
+                                    </span>
+                                    <!--end::Svg Icon-->
+                                </div>
+
+                                <!--end::Aside Toggle-->
+                                <!--begin::Logo-->
+                                <%-- <a href="index.html" class="d-lg-none" id="kt_aside_toggle">
+                                    <img alt="Logo" src="<%=ResolveClientUrl("~/Images/cdo_icon.png")%>" class="max-h-50px" width="50" />
+                                </a>--%>
+                                <!--end::Logo-->
+
+                            </div>
+                            <!--end::Logo bar-->
+                            <!--begin::Toolbar wrapper-->
+                            <div class="d-flex align-items-stretch flex-shrink-0">
+                                <!--begin::User-->
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--begin::Content-->
+                    <div class="content d-flex flex-column flex-column-fluid fs-6" id="kt_content">
+                        <!--begin::Container-->
+                        <div class="container-fluid" id="kt_content_container">
+                            <asp:ContentPlaceHolder ID="cpConTent" runat="server">
+                            </asp:ContentPlaceHolder>
+                        </div>
+                    </div>
+
+                    <!-- Footer -->
+                    <footer class="mt-auto">
+                        <uc3:sFooter ID="sFooter1" runat="server" />
+                    </footer>
+                </div>
+
+            </div>
+        </div>
+
+        <div id="domMessage" style="display: none;">
+            <div class="loader"></div>
+        </div>
+
+    </form>
+
+
+</body>
+</html>
+

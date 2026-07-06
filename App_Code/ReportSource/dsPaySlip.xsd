@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsPaySlip" targetNamespace="http://tempuri.org/dsPaySlip.xsd" xmlns:mstns="http://tempuri.org/dsPaySlip.xsd" xmlns="http://tempuri.org/dsPaySlip.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsPaySlip" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_DataSetName="dsPaySlip" msprop:Generator_UserDSName="dsPaySlip">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="tbl_payslip_header" msprop:Generator_TableClassName="tbl_payslip_headerDataTable" msprop:Generator_TableVarName="tabletbl_payslip_header" msprop:Generator_TablePropName="tbl_payslip_header" msprop:Generator_RowDeletingName="tbl_payslip_headerRowDeleting" msprop:Generator_RowChangingName="tbl_payslip_headerRowChanging" msprop:Generator_RowEvHandlerName="tbl_payslip_headerRowChangeEventHandler" msprop:Generator_RowDeletedName="tbl_payslip_headerRowDeleted" msprop:Generator_UserTableName="tbl_payslip_header" msprop:Generator_RowChangedName="tbl_payslip_headerRowChanged" msprop:Generator_RowEvArgName="tbl_payslip_headerRowChangeEvent" msprop:Generator_RowClassName="tbl_payslip_headerRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="header_id" msprop:Generator_ColumnVarNameInTable="columnheader_id" msprop:Generator_ColumnPropNameInRow="header_id" msprop:Generator_ColumnPropNameInTable="header_idColumn" msprop:Generator_UserColumnName="header_id" type="xs:string" minOccurs="0" />
+              <xs:element name="employee_name" msprop:Generator_ColumnVarNameInTable="columnemployee_name" msprop:Generator_ColumnPropNameInRow="employee_name" msprop:Generator_ColumnPropNameInTable="employee_nameColumn" msprop:Generator_UserColumnName="employee_name" type="xs:string" minOccurs="0" />
+              <xs:element name="employee_position" msprop:Generator_ColumnVarNameInTable="columnemployee_position" msprop:Generator_ColumnPropNameInRow="employee_position" msprop:Generator_ColumnPropNameInTable="employee_positionColumn" msprop:Generator_UserColumnName="employee_position" type="xs:string" minOccurs="0" />
+              <xs:element name="department" msprop:Generator_ColumnVarNameInTable="columndepartment" msprop:Generator_ColumnPropNameInRow="department" msprop:Generator_ColumnPropNameInTable="departmentColumn" msprop:Generator_UserColumnName="department" type="xs:string" minOccurs="0" />
+              <xs:element name="payroll_no" msprop:Generator_ColumnVarNameInTable="columnpayroll_no" msprop:Generator_ColumnPropNameInRow="payroll_no" msprop:Generator_ColumnPropNameInTable="payroll_noColumn" msprop:Generator_UserColumnName="payroll_no" type="xs:string" minOccurs="0" />
+              <xs:element name="payroll_period" msprop:Generator_ColumnVarNameInTable="columnpayroll_period" msprop:Generator_ColumnPropNameInRow="payroll_period" msprop:Generator_ColumnPropNameInTable="payroll_periodColumn" msprop:Generator_UserColumnName="payroll_period" type="xs:string" minOccurs="0" />
+              <xs:element name="payroll_month" msprop:Generator_ColumnVarNameInTable="columnpayroll_month" msprop:Generator_ColumnPropNameInRow="payroll_month" msprop:Generator_ColumnPropNameInTable="payroll_monthColumn" msprop:Generator_UserColumnName="payroll_month" type="xs:string" minOccurs="0" />
+              <xs:element name="days_present" msprop:Generator_ColumnVarNameInTable="columndays_present" msprop:Generator_ColumnPropNameInRow="days_present" msprop:Generator_ColumnPropNameInTable="days_presentColumn" msprop:Generator_UserColumnName="days_present" type="xs:string" minOccurs="0" />
+              <xs:element name="gross_amount" msprop:Generator_ColumnVarNameInTable="columngross_amount" msprop:Generator_ColumnPropNameInRow="gross_amount" msprop:Generator_ColumnPropNameInTable="gross_amountColumn" msprop:Generator_UserColumnName="gross_amount" type="xs:decimal" minOccurs="0" />
+              <xs:element name="net_amount" msprop:Generator_ColumnVarNameInTable="columnnet_amount" msprop:Generator_ColumnPropNameInRow="net_amount" msprop:Generator_ColumnPropNameInTable="net_amountColumn" msprop:Generator_UserColumnName="net_amount" type="xs:decimal" minOccurs="0" />
+              <xs:element name="emp_payroll_remarks" msprop:Generator_ColumnVarNameInTable="columnemp_payroll_remarks" msprop:Generator_ColumnPropNameInRow="emp_payroll_remarks" msprop:Generator_ColumnPropNameInTable="emp_payroll_remarksColumn" msprop:Generator_UserColumnName="emp_payroll_remarks" type="xs:string" minOccurs="0" />
+              <xs:element name="transaction_employees_id" msprop:Generator_ColumnVarNameInTable="columntransaction_employees_id" msprop:Generator_ColumnPropNameInRow="transaction_employees_id" msprop:Generator_ColumnPropNameInTable="transaction_employees_idColumn" msprop:Generator_UserColumnName="transaction_employees_id" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="tbl_payslip_details" msprop:Generator_TableClassName="tbl_payslip_detailsDataTable" msprop:Generator_TableVarName="tabletbl_payslip_details" msprop:Generator_TablePropName="tbl_payslip_details" msprop:Generator_RowDeletingName="tbl_payslip_detailsRowDeleting" msprop:Generator_RowChangingName="tbl_payslip_detailsRowChanging" msprop:Generator_RowEvHandlerName="tbl_payslip_detailsRowChangeEventHandler" msprop:Generator_RowDeletedName="tbl_payslip_detailsRowDeleted" msprop:Generator_UserTableName="tbl_payslip_details" msprop:Generator_RowChangedName="tbl_payslip_detailsRowChanged" msprop:Generator_RowEvArgName="tbl_payslip_detailsRowChangeEvent" msprop:Generator_RowClassName="tbl_payslip_detailsRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="header_id" msprop:Generator_ColumnVarNameInTable="columnheader_id" msprop:Generator_ColumnPropNameInRow="header_id" msprop:Generator_ColumnPropNameInTable="header_idColumn" msprop:Generator_UserColumnName="header_id" type="xs:string" minOccurs="0" />
+              <xs:element name="cd_type" msprop:Generator_ColumnVarNameInTable="columncd_type" msprop:Generator_ColumnPropNameInRow="cd_type" msprop:Generator_ColumnPropNameInTable="cd_typeColumn" msprop:Generator_UserColumnName="cd_type" type="xs:string" minOccurs="0" />
+              <xs:element name="cd_name" msprop:Generator_ColumnVarNameInTable="columncd_name" msprop:Generator_ColumnPropNameInRow="cd_name" msprop:Generator_ColumnPropNameInTable="cd_nameColumn" msprop:Generator_UserColumnName="cd_name" type="xs:string" minOccurs="0" />
+              <xs:element name="cd_amount" msprop:Generator_ColumnVarNameInTable="columncd_amount" msprop:Generator_ColumnPropNameInRow="cd_amount" msprop:Generator_ColumnPropNameInTable="cd_amountColumn" msprop:Generator_UserColumnName="cd_amount" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="dt_QR" msprop:Generator_TableClassName="dt_QRDataTable" msprop:Generator_TableVarName="tabledt_QR" msprop:Generator_TablePropName="dt_QR" msprop:Generator_RowDeletingName="dt_QRRowDeleting" msprop:Generator_RowChangingName="dt_QRRowChanging" msprop:Generator_RowEvHandlerName="dt_QRRowChangeEventHandler" msprop:Generator_RowDeletedName="dt_QRRowDeleted" msprop:Generator_UserTableName="dt_QR" msprop:Generator_RowChangedName="dt_QRRowChanged" msprop:Generator_RowEvArgName="dt_QRRowChangeEvent" msprop:Generator_RowClassName="dt_QRRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="qr_code" msprop:Generator_ColumnVarNameInTable="columnqr_code" msprop:Generator_ColumnPropNameInRow="qr_code" msprop:Generator_ColumnPropNameInTable="qr_codeColumn" msprop:Generator_UserColumnName="qr_code" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

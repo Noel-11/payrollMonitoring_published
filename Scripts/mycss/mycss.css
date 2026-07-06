@@ -1,0 +1,209 @@
+﻿
+
+.loader {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    z-index: 1;
+    width: 150px;
+    height: 150px;
+    margin: -75px 0 0 -75px;
+    border: 16px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 16px solid #3498db;
+    width: 120px;
+    height: 120px;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+}
+
+@-webkit-keyframes spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+    }
+
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/*.ddlSel {
+    text-overflow: ellipsis; 
+    overflow: hidden;
+    white-space: nowrap;
+}*/
+  
+
+/*.loader {
+    z-index: 99;
+    width: 100px;
+    height: 100px;
+    display:inline-block;
+    position: absolute;
+    border: 5px solid;
+    border-color:#de3500 #0000 #fff #0000;
+    border-radius: 50%;
+    box-sizing: border-box;
+    animation: 1s rotate linear infinite;
+ }
+ .loader:before , .loader:after{
+    content: '';
+    top: 0;
+    left: 0;
+    position: absolute;
+    border: 10px solid transparent;
+    border-bottom-color:#fff;
+    transform: translate(-10px, 19px) rotate(-35deg);
+  }
+ .loader:after {
+    border-color: #de3500 #0000 #0000 #0000 ;
+    transform: translate(32px, 3px) rotate(-35deg);
+  }
+   @keyframes rotate {
+    100%{    transform: rotate(360deg)}
+  }*/
+
+
+.side-notification {
+    position: fixed;
+    top: 10%;
+    right: 10px; /* Adjust this value as needed */
+    transform: translateY(-50%);
+    width: 300px;
+    transition: display 0.2s;
+    opacity: 0;
+    display: none;
+    z-index: 999999;
+}
+
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.input-group > .select2-container--bootstrap {
+	width: 100%;
+	flex: 1 1 auto;
+}
+
+.input-group > .select2-container--bootstrap .select2-selection--single {
+	height: 100%;
+	line-height: inherit;
+	padding: 0.5rem 1rem;
+}
+
+
+.divHeader {
+    color: black; 
+    padding-bottom: 5px; 
+    background-image: linear-gradient(to bottom right, #cdf9df, #eafbec);
+
+}
+
+.divTitle {
+    font-family: 'Times New Roman'; 
+    font-size: x-large; 
+    font-weight: bold; 
+    color: yellow;
+}
+
+.divTitleBlack {
+    font-family: 'Times New Roman'; 
+    font-size: x-large; 
+    font-weight: bold; 
+    color: black;
+}
+
+.modal{
+    z-index: 11 !important;
+}
+
+/*#snackbar {
+    visibility: hidden;
+    min-width: 250px;
+    margin-left: -125px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    border-radius: 2px;
+    padding: 16px;
+    position: absolute;
+    z-index: 1;
+    left: 50%;
+    bottom: 30px;
+    font-size: 17px;
+}
+
+    #snackbar.show {
+        visibility: visible;
+        -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+        animation: fadein 0.5s, fadeout 0.5s 1.5s;
+    }
+
+@-webkit-keyframes fadein {
+    from {
+        bottom: 0;
+        opacity: 0;
+    }
+
+    to {
+        bottom: 30px;
+        opacity: 1;
+    }
+}
+
+@keyframes fadein {
+    from {
+        bottom: 0;
+        opacity: 0;
+    }
+
+    to {
+        bottom: 30px;
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes fadeout {
+    from {
+        bottom: 30px;
+        opacity: 1;
+    }
+
+    to {
+        bottom: 0;
+        opacity: 0;
+    }
+}
+
+@keyframes fadeout {
+    from {
+        bottom: 30px;
+        opacity: 1;
+    }
+
+    to {
+        bottom: 0;
+        opacity: 0;
+    }
+}*/
+
+

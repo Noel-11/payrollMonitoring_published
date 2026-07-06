@@ -1,0 +1,166 @@
+﻿<%@ Master Language="VB" AutoEventWireup="false" CodeFile="Admin2.master.vb" Inherits="MasterPage_Admin" %>
+
+<!DOCTYPE html>
+
+<%@ Register Src="~/Include/wucMainMenuNA.ascx" TagName="wucMainMenu" TagPrefix="uc4" %>
+<%@ Register Src="~/Include/sFooter.ascx" TagName="sFooter" TagPrefix="uc3" %>
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+
+<head runat="server">
+
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <link rel="Shortcut Icon" href="~/Images/favicon.ico" type="image/x-icon" />
+    <title>PMS</title>
+
+    <meta content="" name="description" />
+    <meta content="" name="keywords" />
+
+    <asp:ContentPlaceHolder ID="cpHead" runat="server">
+        <!-- Vendor CSS Files -->
+        <link href="<%=ResolveClientUrl("~/Scripts/NiceAdmin/vendor/bootstrap/css/bootstrap.min.css")%>" rel="stylesheet" />
+        <link href="<%=ResolveClientUrl("~/Scripts/NiceAdmin/vendor/bootstrap-icons/bootstrap-icons.css")%>" rel="stylesheet" />
+        <link href="<%=ResolveClientUrl("~/Scripts/NiceAdmin/vendor/boxicons/css/boxicons.min.css")%>" rel="stylesheet" />
+        <link href="<%=ResolveClientUrl("~/Scripts/NiceAdmin/vendor/quill/quill.snow.css")%>" rel="stylesheet" />
+        <link href="<%=ResolveClientUrl("~/Scripts/NiceAdmin/vendor/quill/quill.bubble.css")%>" rel="stylesheet" />
+        <link href="<%=ResolveClientUrl("~/Scripts/NiceAdmin/vendor/remixicon/remixicon.css")%>" rel="stylesheet" />
+        <link href="<%=ResolveClientUrl("~/Scripts/NiceAdmin/vendor/simple-datatables/style.css")%>" rel="stylesheet" />
+
+        <!-- Template Main CSS File -->
+        <link href="<%=ResolveClientUrl("~/Scripts/NiceAdmin/css/style.css")%>" rel="stylesheet" />
+        <link href="<%=ResolveClientUrl("~/Scripts/mycss/mycss.css")%>" rel="stylesheet" />
+
+        <script src="<%=ResolveClientUrl("~/Scripts/myJS/myJs.js")%>"></script>
+        <script src="<%=ResolveClientUrl("~/Scripts/Bootstrap5/jquery.min.js")%>"></script>
+        <script src="<%=ResolveClientUrl("~/Scripts/block/blockui.js")%>"></script>
+
+        <link href="assets/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css" />
+        <script src="assets/plugins/global/plugins.bundle.js"></script>
+
+        <link href="<%=ResolveClientUrl("~/Scripts/select2/select2.min.css")%>" rel="stylesheet" />
+        <script src="<%=ResolveClientUrl("~/Scripts/select2/select2.min.js")%>"></script>
+        <%--<script src="<%=ResolveClientUrl("~/Scripts/select2/jquery.min.js")%>"></script>--%>
+
+        <!--SELECT2  Styles -->
+        <%--<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/select2-bootstrap-5-theme@1.3.0/dist/select2-bootstrap-5-theme.min.css" />--%>
+        <!-- Or for RTL support -->
+
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/select2-bootstrap-5-theme@1.3.0/dist/select2-bootstrap-5-theme.rtl.min.css" />
+
+        <!-- Scripts -->
+        <%-- <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.0/dist/jquery.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>--%>
+    </asp:ContentPlaceHolder>
+
+</head>
+
+<body>
+
+    <form id="form1" role="form" method="post" runat="server" autocomplete="off" defaultbutton="btnDoNothing">
+        <asp:ScriptManager ID="ScriptManager1" runat="server">
+            <Scripts>
+                <asp:ScriptReference Path="~/Scripts/block/UPBlock.js" />
+            </Scripts>
+        </asp:ScriptManager>
+
+        <asp:Button ID="btnDoNothing" runat="server" Enabled="false" Style="display: none;" />
+
+        <!-- ======= Header ======= -->
+        <header id="header" class="header fixed-top d-flex align-items-center" style="background-image: linear-gradient(to bottom right, #cdf9df, #babbba);">
+
+            <div class="d-flex align-items-center justify-content-between">
+                <a href="#" class="logo d-flex align-items-center">
+                    <img src="<%=ResolveClientUrl("~/Images/cdo_icon.png")%>" alt="CDO Logo" />
+                    <span class="d-none d-lg-block">PMS</span>
+                </a>
+                <i class="bi bi-list toggle-sidebar-btn"></i>
+            </div>
+
+            <!-- End Logo -->
+
+            <nav class="header-nav ms-auto">
+                <ul class="d-flex align-items-center">
+
+                    <li class="nav-item dropdown pe-3">
+
+                        <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
+                            <span runat="server" id="spanUserName" class="d-none d-md-block dropdown-toggle ps-2"></span>
+                        </a>
+
+                        <!-- End Profile Iamge Icon -->
+
+                        <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
+
+                            <li class="dropdown-header">
+                                <h6><span runat="server" id="spanUserNameDetails"></span></h6>
+                                <span runat="server" id="spanOffice" class="text-wrap"></span>
+                            </li>
+
+                            <li>
+                                <a class="dropdown-item d-flex align-items-center" runat="server" id="aChangePassword" href="users-profile.html">
+                                    <i class="bi bi-gear"></i>
+                                    <span>Change Password</span>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a runat="server" id="aSignout" class="dropdown-item d-flex align-items-center" href="#">
+                                    <i class="bi bi-box-arrow-right"></i>
+                                    <span>Sign Out</span>
+                                </a>
+                            </li>
+
+                        </ul>
+                        <!-- End Profile Dropdown Items -->
+                    </li>
+                    <!-- End Profile Nav -->
+                </ul>
+            </nav>
+            <!-- End Icons Navigation -->
+
+        </header>
+
+        <!-- End Header -->
+
+        <!-- ======= Sidebar ======= -->
+        <uc4:wucMainMenu ID="wucMainMenu2" runat="server" />
+
+        <!--begin::Content-->
+        <main id="main" class="main">
+              <asp:ContentPlaceHolder ID="cpConTent" runat="server">
+              </asp:ContentPlaceHolder>
+        <!-- Footer -->
+        <footer class="mt-auto">
+            <uc3:sfooter id="sFooter1" runat="server" />
+        </footer>
+            
+         <div id="domMessage" style="display: none;">
+               <div class="loader"></div>
+                                 
+         </div>
+
+        </main>
+
+
+    </form>
+
+    <!-- Vendor JS Files -->
+    <script src="<%=ResolveClientUrl("~/Scripts/NiceAdmin/vendor/apexcharts/apexcharts.min.js")%>"></script>
+    <script src="<%=ResolveClientUrl("~/Scripts/NiceAdmin/vendor/bootstrap/js/bootstrap.bundle.min.js")%>"></script>
+    <script src="<%=ResolveClientUrl("~/Scripts/NiceAdmin/vendor/chart.js/chart.umd.js")%>"></script>
+    <script src="<%=ResolveClientUrl("~/Scripts/NiceAdmin/vendor/echarts/echarts.min.js")%>"></script>
+    <script src="<%=ResolveClientUrl("~/Scripts/NiceAdmin/vendor/quill/quill.min.js")%>"></script>
+    <script src="<%=ResolveClientUrl("~/Scripts/NiceAdmin/vendor/simple-datatables/simple-datatables.js")%>"></script>
+    <script src="<%=ResolveClientUrl("~/Scripts/NiceAdmin/vendor/tinymce/tinymce.min.js")%>"></script>
+    <script src="<%=ResolveClientUrl("~/Scripts/NiceAdmin/vendor/php-email-form/validate.js")%>"></script>
+
+    <!-- Template Main JS File -->
+    <script src="<%=ResolveClientUrl("~/Scripts/NiceAdmin/js/main.js")%>"></script>
+
+</body>
+</html>
+
