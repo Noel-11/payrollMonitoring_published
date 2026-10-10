@@ -1,4 +1,4 @@
-﻿<%@ Page Language="VB" AutoEventWireup="false" CodeFile="Payroll_check.aspx.vb" Inherits="Payroll_check" Theme="Skins" %>
+<%@ Page Language="VB" AutoEventWireup="false" CodeFile="Payroll_check.aspx.vb" Inherits="Payroll_check" Theme="Skins" %>
 
 <!DOCTYPE html>
 <%@ Register Src="~/Include/wucConfirmBoxBS5.ascx" TagName="wucConfirmBox" TagPrefix="wucConfirmBox" %>
@@ -43,6 +43,67 @@
     <%-- <script src="Scripts/Bootstrap5/js/bootstrap.bundle.js"></script>--%>
 
     <style type="text/css">
+        /* Mobile-first layout for payroll monitoring */
+        body { padding: 12px; background: #f3f6fb; }
+        .shadow1 { max-width: 1440px; margin: 0 auto; overflow: hidden; background: #fff; }
+        #header .container { flex-wrap: wrap; gap: .5rem; }
+        #header .logos { width: auto; max-width: 25%; max-height: 42px; height: auto; object-fit: contain; margin-right: .25rem; }
+        #hero { min-height: 0; max-height: none !important; overflow: visible !important; padding: 1rem 0 2rem; align-items: flex-start !important; }
+        #hero > .container { width: 100%; }
+        #hero .hero-img { min-width: 0; }
+        #hero .card-header { border: 0; background: transparent; padding: .75rem 0 1rem; }
+        #hero .card-header h1 { display: flex; align-items: center; gap: .65rem; margin: 0; font-size: clamp(1.35rem, 5vw, 2rem); line-height: 1.25; }
+        #hero .card-header img { width: 36px; height: 36px; object-fit: contain; }
+        #hero .form-control, #hero .form-select { min-height: 48px; }
+        #hero .btn { min-height: 46px; padding-inline: 1.25rem; }
+        #hero a { display: inline-block; padding: .35rem 0; }
+        #hero .captcha, #hero img { max-width: 100%; }
+        .modal-dialog { margin: .5rem; }
+        .modal-content { max-height: calc(100dvh - 1rem); }
+        .modal-body { overflow: auto; }
+        .modal-body .row > [class*="col-"] { min-width: 0; }
+        .modal-body .input-group-text { white-space: normal; }
+        .modal-body .form-control { min-width: 0; height: auto; overflow-wrap: anywhere; }
+        .modal-body .gridviewGray, .modal-body .gridviewBlue { width: max-content; min-width: 100%; max-width: none; }
+        .modal-body .responsive-table { width: 100%; max-width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+        .modal-body .responsive-table > .gridviewGray, .modal-body .responsive-table > .gridviewBlue { margin-bottom: 0; }
+        .modal-body table td, .modal-body table th { padding: .5rem; vertical-align: middle; }
+        input.form-control, select.form-select, textarea.form-control { width: 100%; max-width: 100%; min-width: 0; }
+        button.btn, input.btn, .btn { min-height: 44px; max-width: 100%; white-space: normal; }
+        .validation-summary-errors, span[style*="color:Red"], span[style*="color: red"] { display: block; max-width: 100%; overflow-wrap: anywhere; }
+        .modal-header h3 { margin: 0; font-size: clamp(1.1rem, 4vw, 1.5rem); }
+        .modal-header img { max-width: 40px; max-height: 40px; object-fit: contain; }
+        .modal-footer { gap: .5rem; }
+        .modal-footer .btn { min-height: 44px; }
+        @media (min-width: 576px) {
+            body { padding: 24px; }
+            .modal-dialog { margin: 1.75rem auto; }
+        }
+        @media (max-width: 991.98px) {
+            #divFloatImg { display: none !important; }
+            #hero > .container > .row { justify-content: center; }
+            #hero .hero-img { flex: 0 0 100%; max-width: 720px; }
+        }
+        @media (max-width: 575.98px) {
+            body { padding: 0; }
+            .shadow1 { border-radius: 0; box-shadow: none; }
+            #header { padding: .5rem 0; }
+            #header > .container { padding-inline: 12px; }
+            #hero > .container { padding-inline: 16px; }
+            #hero .row { --bs-gutter-x: .75rem; }
+            #hero .row > [class*="col-"] { min-width: 0; }
+            #hero .col-md-6 { flex: 0 0 100%; max-width: 100%; }
+            #hero .float-end { float: none !important; }
+            .modal-dialog { margin: 0; }
+            .modal-content { min-height: 100dvh; max-height: 100dvh; border-radius: 0 !important; }
+            .modal-body { padding: .75rem !important; border-width: 1px !important; }
+            .modal-header { gap: .5rem; padding: .75rem; }
+            .modal-header h3 { flex: 1; }
+            .modal-body .input-group { flex-wrap: wrap; }
+            .modal-body .input-group-text { width: 100%; border-radius: .375rem .375rem 0 0 !important; }
+            .modal-body .input-group .form-control { width: 100%; flex: 1 1 100%; border-radius: 0 0 .375rem .375rem !important; }
+        }
+
         .footer {
             font-family: "Montserrat", sans-serif;
         }
@@ -144,12 +205,8 @@
             line-height: 13px;
         }
 
-        @media (max-width: 991px) {
-            #divFloatImg {
-                display: none;
-            }
-        }
     </style>
+    <link href="assets/css/payroll-mobile.css" rel="stylesheet" />
 
 </head>
 
@@ -190,7 +247,7 @@
             </header>
             <!-- End Header -->
 
-            <section id="hero" class="d-flex align-items-center mb-5" style="max-height: 600px; overflow-y: scroll;">
+            <section id="hero" class="d-flex align-items-center mb-5">
 
 
                 <div class="container">
@@ -269,7 +326,7 @@
                                          </div>
                                      </div>
                                   
-                                    <div class="row">
+                                    <div class="row" runat="server" visible="false">
                                         <div class="col-md-12 mb-2">
                                             <div class="container-fluid img-responsive" align="center">
                                                 <site:Captcha runat="server" ID="Captcha4" EnableClientScript="true" ValidationGroup="DOCRETRIEVE" />
@@ -301,7 +358,7 @@
 
             <%--MODAL PAYROLL--%>
             <div id="mdlPayroll" role="dialog" class="modal fade show" data-bs-backdrop="false" data-bs-keyboard="false">
-                <div class="modal-dialog modal-xl">
+                <div class="modal-dialog modal-xl modal-fullscreen-sm-down modal-dialog-scrollable">
                     <!-- Modal content-->
                     <div class="modal-content" style="border-top-left-radius: 15px; border-top-right-radius: 15px;">
                         <div class="modal-header" style="border-top-left-radius: 10px; border-top-right-radius: 10px; background-color: #3366cc; text-align: center;">
@@ -402,7 +459,7 @@
 
                                     </div>
 
-                                    <div class="row" style="max-width: 1190px; overflow-x: scroll;">
+                                    <div class="row table-responsive mx-0 mb-2">
                                         <div class="col-md-12 mb-1">
                                             <asp:GridView runat="server" ID="_gvLedger" HeaderStyle-Font-Size="14px" CssClass="gridviewGray"
                                                 ShowFooter="false" PagerStyle-CssClass="pgr" AlternatingRowStyle-CssClass="alt"
@@ -460,7 +517,7 @@
             <%--MDL CHECK PAYROLL--%>
 
             <div id="mdlCheck" role="dialog" class="modal fade show" data-bs-backdrop="false" data-bs-keyboard="false">
-                <div class="modal-dialog modal-xl">
+                <div class="modal-dialog modal-xl modal-fullscreen-sm-down modal-dialog-scrollable">
                     <!-- Modal content-->
                     <div class="modal-content" style="border-top-left-radius: 15px; border-top-right-radius: 15px;">
                         <asp:UpdatePanel ID="updatePanel1" runat="server">
@@ -529,7 +586,7 @@
                                     </div>
 
                                     <div class="row">
-                                        <div class="col-md-12">
+                                        <div class="col-md-12 responsive-table">
                                             <asp:GridView runat="server" ID="_gvCheck" HeaderStyle-Font-Size="14px" CssClass="gridviewBlue"
                                                 ShowFooter="false" PagerStyle-CssClass="pgr" AlternatingRowStyle-CssClass="alt"
                                                 AutoGenerateColumns="false" GridLines="None" Font-Names="Arial" Font-Size="14px"
@@ -633,7 +690,7 @@
 
                     <%--LOGS--%>
                     <div id="pnlLogs" role="dialog" class="modal fade show" data-bs-backdrop="false" data-bs-keyboard="false">
-                        <div class="modal-dialog modal-lg" style="width: 95%; border-top-left-radius: 2px; border-top-right-radius: 2px; border-color: blue;">
+                        <div class="modal-dialog modal-lg modal-fullscreen-sm-down modal-dialog-scrollable" style="border-top-left-radius: 2px; border-top-right-radius: 2px; border-color: blue;">
                             <!-- Modal content-->
                             <div class="modal-content" style="border-top-left-radius: 15px; border-top-right-radius: 15px;">
                                 <div class="modal-header" style="border-top-left-radius: 10px; border-top-right-radius: 10px; background-color: lightblue; text-align: center; font-family: garamond; font-weight: bold; font-size: large; color: black" runat="server" id="div1">
@@ -681,7 +738,7 @@
                                     </div>
 
                                     <div class="row">
-                                        <div class="col-md-12">
+                                        <div class="col-md-12 responsive-table">
                                             <asp:GridView runat="server" ID="_gv" HeaderStyle-Font-Size="11px" CssClass="gridviewGray"
                                                 ShowFooter="false" PagerStyle-CssClass="pgr" AlternatingRowStyle-CssClass="alt"
                                                 AutoGenerateColumns="false" GridLines="None" Font-Names="Arial" Font-Size="12px"
@@ -716,7 +773,7 @@
 
         <%--FORGOT PASSWORD--%>
         <div id="mdlForgotPassword" role="dialog" class="modal fade" data-bs-backdrop="false" data-bs-keyboard="false" style="z-index: 10">
-            <div class="modal-dialog modal-md">
+            <div class="modal-dialog modal-md modal-fullscreen-sm-down modal-dialog-scrollable">
                 <!-- Modal content-->
                 <div class="modal-content">
                     <div class="modal-header bg-primary" style="text-align: center">

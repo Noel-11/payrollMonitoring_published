@@ -43,6 +43,47 @@
     <%-- <script src="Scripts/Bootstrap5/js/bootstrap.bundle.js"></script>--%>
 
     <style type="text/css">
+        /* Mobile-first layout for payroll monitoring */
+        body { padding: 12px; background: #f3f6fb; }
+        .shadow1 { max-width: 1440px; margin: 0 auto; overflow: hidden; background: #fff; }
+        #header .container { flex-wrap: wrap; gap: .5rem; }
+        #header .logos { width: auto; max-width: 25%; max-height: 42px; height: auto; object-fit: contain; margin-right: .25rem; }
+        #hero { min-height: 0; max-height: none !important; overflow: visible !important; padding: 1rem 0 2rem; align-items: flex-start !important; }
+        #hero > .container { width: 100%; }
+        #hero .hero-img { min-width: 0; }
+        #hero .card-header { border: 0; background: transparent; padding: .75rem 0 1rem; }
+        #hero .card-header h1 { display: flex; align-items: center; gap: .65rem; margin: 0; font-size: clamp(1.35rem, 5vw, 2rem); line-height: 1.25; }
+        #hero .card-header img { width: 36px; height: 36px; object-fit: contain; }
+        #hero .form-control, #hero .form-select { min-height: 48px; }
+        #hero .btn { min-height: 46px; padding-inline: 1.25rem; }
+        #hero input.form-control, #hero select.form-select, #hero textarea.form-control { width: 100%; max-width: 100%; min-width: 0; }
+        #hero button.btn, #hero input.btn, #hero .btn { max-width: 100%; white-space: normal; }
+        #hero .input-group { flex-wrap: wrap; }
+        #hero .input-group > .form-control { flex: 1 1 12rem; }
+        #hero .input-group > span { max-width: 100%; }
+        #hero [id*="Validator"] { display: block; max-width: 100%; overflow-wrap: anywhere; }
+        #hero a { display: inline-block; padding: .35rem 0; }
+        #hero .captcha, #hero img { max-width: 100%; }
+        @media (min-width: 576px) { body { padding: 24px; } }
+        @media (max-width: 991.98px) {
+            #divFloatImg { display: none !important; }
+            #hero > .container > .row { justify-content: center; }
+            #hero .hero-img { flex: 0 0 100%; max-width: 720px; }
+        }
+        @media (max-width: 575.98px) {
+            body { padding: 0; }
+            .shadow1 { border-radius: 0; box-shadow: none; }
+            #header { padding: .5rem 0; }
+            #header > .container { padding-inline: 12px; }
+            #hero > .container { padding-inline: 16px; }
+            #hero .row { --bs-gutter-x: .75rem; }
+            #hero .row > [class*="col-"] { min-width: 0; }
+            #hero .col-md-6 { flex: 0 0 100%; max-width: 100%; }
+            #hero .float-end { float: none !important; }
+            #hero .btn { width: 100%; }
+            #hero .input-group > .btn { flex: 1 1 100%; }
+        }
+
         .footer {
             font-family: "Montserrat", sans-serif;
         }
@@ -144,12 +185,8 @@
             line-height: 13px;
         }
 
-        @media (max-width: 991px) {
-            #divFloatImg {
-                display: none;
-            }
-        }
     </style>
+    <link href="assets/css/payroll-mobile.css" rel="stylesheet" />
 
 </head>
 
@@ -189,7 +226,7 @@
             </header>
             <!-- End Header -->
 
-            <section id="hero" class="d-flex align-items-center mb-5" style="max-height: 600px; overflow-y: scroll;">
+            <section id="hero" class="d-flex align-items-center mb-5">
 
 
                 <div class="container">

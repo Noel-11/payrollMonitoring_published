@@ -39,6 +39,35 @@
     <link href="Scripts/mycss/mycss.css" rel="stylesheet" />
 
     <style type="text/css">
+        /* Mobile-first layout shared with the payroll access pages */
+        body { padding: 12px; background: #f3f6fb; }
+        .shadow1 { max-width: 1440px; margin: 0 auto; overflow: hidden; background: #fff; }
+        #header .container { flex-wrap: wrap; gap: .5rem; }
+        #header .logos { width: auto; max-width: 25%; max-height: 42px; height: auto; object-fit: contain; margin-right: .25rem; }
+        #hero { min-height: 0; padding: 2rem 0; align-items: flex-start !important; }
+        #hero > .container { width: 100%; }
+        #hero h1 { font-size: clamp(1.8rem, 7vw, 3rem); line-height: 1.15; }
+        #hero h2 { font-size: clamp(1.15rem, 4.5vw, 1.75rem); line-height: 1.4; }
+        #hero .btn-get-started, #hero .btn-get-started1 { display: inline-flex; align-items: center; justify-content: center; min-height: 48px; margin: .35rem; padding: .75rem 1rem; text-align: center; }
+        #hero .btn-get-started, #hero .btn-get-started1 { max-width: 100%; white-space: normal; }
+        #hero .hero-img img { max-width: 100%; height: auto; }
+        @media (min-width: 576px) { body { padding: 24px; } }
+        @media (max-width: 991.98px) {
+            #divFloatImg { display: none !important; }
+            #hero > .container > .row { justify-content: center; }
+            #hero .col-lg-8 { flex: 0 0 100%; max-width: 760px; }
+        }
+        @media (max-width: 575.98px) {
+            body { padding: 0; }
+            .shadow1 { border-radius: 0; box-shadow: none; }
+            #header { padding: .5rem 0; }
+            #header > .container { padding-inline: 12px; }
+            #hero > .container { padding-inline: 20px; }
+            #hero { padding: 2rem 0 1rem; }
+            #hero .d-flex.justify-content-center { flex-direction: column; align-items: stretch; }
+            #hero .btn-get-started, #hero .btn-get-started1 { width: 100%; margin: .35rem 0; }
+        }
+
         .footer {
             font-family: "Montserrat", sans-serif;
         }
@@ -139,14 +168,8 @@
             font-size: 11px;
             line-height: 13px;
         }
-
-
-        @media (max-width: 991px) {
-            #divFloatImg {
-                display: none;
-            }
-        }
     </style>
+    <link href="assets/css/payroll-mobile.css" rel="stylesheet" />
 
 </head>
 
@@ -201,7 +224,7 @@
 
                             <div class="d-flex justify-content-center justify-content-lg-start">
                                  <a href="paycheck_register.aspx" class="btn-get-started1">REGISTER <i class="bi bi-arrow-right"></i></a>
-                                <a href="Payroll_check.aspx" class="btn-get-started">Check Payroll<i class="bi bi-arrow-right"></i></a>
+                                <a href="Payroll_check.aspx" class="btn btn-get-started">Check Payroll<i class="bi bi-arrow-right"></i></a>
                                
 
                             </div>

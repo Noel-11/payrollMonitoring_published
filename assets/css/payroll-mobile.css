@@ -1,0 +1,454 @@
+:root {
+    --payroll-ink: #19313b;
+    --payroll-muted: #63747a;
+    --payroll-blue: #176b87;
+    --payroll-blue-dark: #10495f;
+    --payroll-mint: #d9eee5;
+    --payroll-line: #d8e2e2;
+    --payroll-paper: #ffffff;
+    --payroll-ground: #edf3f1;
+}
+
+html {
+    min-width: 320px;
+    background: var(--payroll-ground);
+}
+
+body {
+    min-height: 100vh;
+    padding: clamp(0px, 2.5vw, 32px) !important;
+    color: var(--payroll-ink);
+    background: var(--payroll-ground);
+    font-family: "Open Sans", sans-serif;
+}
+
+.shadow1 {
+    max-width: 1440px;
+    min-height: calc(100vh - 64px);
+    margin: 0 auto;
+    overflow: hidden;
+    border: 1px solid rgba(25, 49, 59, .08);
+    border-radius: 12px;
+    background: var(--payroll-paper);
+    box-shadow: 0 16px 48px rgba(25, 49, 59, .09);
+}
+
+#header {
+    padding: 14px 0;
+    border-bottom: 1px solid var(--payroll-line);
+    background: var(--payroll-paper);
+}
+
+#header > .container {
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+#header .logos {
+    width: auto;
+    max-width: 22%;
+    max-height: 42px;
+    margin-right: clamp(4px, 1vw, 16px);
+    object-fit: contain;
+}
+
+#navbar {
+    margin-left: auto;
+}
+
+#navbar:not(.navbar-mobile) a {
+    min-height: 44px;
+    padding: 10px 14px;
+    border-radius: 5px;
+    color: var(--payroll-ink);
+    font-weight: 600;
+}
+
+#navbar:not(.navbar-mobile) a:hover,
+#navbar:not(.navbar-mobile) a.active {
+    color: var(--payroll-blue-dark);
+    background: var(--payroll-mint);
+}
+
+.mobile-nav-toggle {
+    min-width: 44px;
+    min-height: 44px;
+    display: grid;
+    place-items: center;
+    border: 1px solid var(--payroll-line);
+    border-radius: 5px;
+    color: var(--payroll-ink);
+}
+
+.navbar-mobile {
+    background: rgba(25, 49, 59, .68);
+}
+
+.navbar-mobile ul {
+    border-radius: 8px;
+}
+
+.navbar-mobile a {
+    min-height: 48px;
+    color: var(--payroll-ink) !important;
+}
+
+#hero {
+    min-height: 0;
+    height: auto;
+    padding: clamp(24px, 5vw, 72px) 0;
+    overflow: visible;
+    align-items: center !important;
+    background: var(--payroll-paper);
+}
+
+#hero > .container {
+    width: 100%;
+    padding-top: 0;
+}
+
+#hero h1 {
+    color: var(--payroll-ink);
+    font-family: "Jost", sans-serif;
+    font-size: clamp(1.8rem, 5vw, 3.2rem);
+    font-weight: 600;
+    line-height: 1.12;
+}
+
+#hero h2 {
+    color: var(--payroll-muted);
+    font-family: "Open Sans", sans-serif;
+    font-size: clamp(1.05rem, 2.4vw, 1.4rem);
+    line-height: 1.5;
+}
+
+#hero .hero-img {
+    min-width: 0;
+}
+
+#hero .hero-img > div {
+    padding: clamp(18px, 3vw, 32px);
+    border: 1px solid var(--payroll-line);
+    border-top: 4px solid var(--payroll-blue);
+    border-radius: 8px;
+    background: var(--payroll-paper);
+    box-shadow: 0 12px 32px rgba(25, 49, 59, .08);
+}
+
+#hero .card-header {
+    padding: 0 0 20px;
+    border: 0;
+    background: transparent;
+}
+
+#hero .card-header h1 {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 0;
+    font-size: clamp(1.45rem, 3vw, 2rem);
+    line-height: 1.25;
+}
+
+#hero .card-header img {
+    width: 36px;
+    height: 36px;
+    object-fit: contain;
+}
+
+#hero .form-control,
+#hero .form-select,
+#mdlForgotPassword .form-control {
+    min-width: 0;
+    min-height: 48px;
+    border-color: #bdcccf;
+    border-radius: 5px;
+    color: var(--payroll-ink);
+    background-color: #fff;
+    font-size: 16px;
+}
+
+#hero .form-control:focus,
+#hero .form-select:focus,
+#mdlForgotPassword .form-control:focus {
+    border-color: var(--payroll-blue);
+    box-shadow: 0 0 0 .2rem rgba(23, 107, 135, .16);
+}
+
+#hero .btn,
+#mdlForgotPassword .btn {
+    min-width: 48px;
+    min-height: 48px;
+    border-radius: 5px;
+    font-weight: 700;
+}
+
+#hero .btn-primary,
+#mdlForgotPassword .btn-primary {
+    border-color: var(--payroll-blue);
+    background: var(--payroll-blue);
+}
+
+#hero .btn-primary:hover,
+#mdlForgotPassword .btn-primary:hover {
+    border-color: var(--payroll-blue-dark);
+    background: var(--payroll-blue-dark);
+}
+
+#hero a:not(.btn) {
+    color: var(--payroll-blue-dark) !important;
+    font-weight: 600;
+    text-underline-offset: 3px;
+}
+
+#hero .row {
+    --bs-gutter-x: 1rem;
+}
+
+#hero [id*="Validator"],
+.validation-summary-errors {
+    display: block;
+    max-width: 100%;
+    margin-bottom: 5px;
+    color: #a52e2e;
+    overflow-wrap: anywhere;
+}
+
+#hero .captcha,
+#hero img {
+    max-width: 100%;
+}
+
+.modal-dialog {
+    margin: 1rem auto;
+}
+
+.modal-content {
+    max-height: calc(100dvh - 2rem);
+    overflow: hidden;
+    border: 1px solid var(--payroll-line);
+    border-radius: 8px !important;
+    box-shadow: 0 18px 54px rgba(13, 36, 45, .22);
+}
+
+.modal-header {
+    min-height: 64px;
+    gap: 12px;
+    border-radius: 0 !important;
+}
+
+.modal-header h3 {
+    flex: 1;
+    margin: 0;
+    font-family: "Jost", sans-serif;
+    font-size: clamp(1.1rem, 3vw, 1.5rem);
+    line-height: 1.25;
+}
+
+.modal-header img {
+    max-width: 40px;
+    max-height: 40px;
+    object-fit: contain;
+}
+
+.modal-body {
+    min-width: 0;
+    overflow: auto;
+    border-width: 0 !important;
+    background: #fbfdfc;
+}
+
+.modal-body .row > [class*="col-"] {
+    min-width: 0;
+}
+
+.modal-body .input-group {
+    min-width: 0;
+}
+
+.modal-body .input-group-text {
+    max-width: 100%;
+    border-color: var(--payroll-line) !important;
+    color: var(--payroll-muted) !important;
+    font-size: .85rem;
+    font-weight: 700;
+    white-space: normal;
+}
+
+.modal-body .form-control {
+    min-width: 0;
+    min-height: 42px;
+    height: auto;
+    border-color: var(--payroll-line) !important;
+    color: var(--payroll-ink);
+    background: #fff;
+    overflow-wrap: anywhere;
+}
+
+.modal-body .responsive-table,
+.modal-body .table-responsive {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.modal-body .gridviewGray,
+.modal-body .gridviewBlue {
+    width: max-content;
+    min-width: 100%;
+    max-width: none;
+    margin-bottom: 0;
+}
+
+.modal-body table td,
+.modal-body table th {
+    padding: .6rem;
+    vertical-align: middle;
+}
+
+.modal-footer {
+    gap: 8px;
+    border-color: var(--payroll-line);
+    background: var(--payroll-paper);
+}
+
+.modal-footer .btn,
+.btn-close {
+    min-width: 44px;
+    min-height: 44px;
+}
+
+#mdlPayroll .badge {
+    max-width: 100%;
+    padding: .65rem .8rem;
+    white-space: normal;
+    text-align: left;
+}
+
+@media (max-width: 991.98px) {
+    #divFloatImg {
+        display: none !important;
+    }
+
+    #hero > .container > .row {
+        justify-content: center;
+    }
+
+    #hero .hero-img {
+        flex: 0 0 100%;
+        max-width: 720px;
+    }
+}
+
+@media (max-width: 575.98px) {
+    body {
+        padding: 0 !important;
+    }
+
+    .shadow1 {
+        min-height: 100vh;
+        border: 0;
+        border-radius: 0;
+        box-shadow: none;
+    }
+
+    #header {
+        padding: 10px 0;
+    }
+
+    #header > .container {
+        padding-inline: 12px;
+    }
+
+    #header .logos {
+        max-width: 21%;
+        max-height: 36px;
+        margin-right: 2px;
+    }
+
+    #hero {
+        padding: 28px 0 36px;
+    }
+
+    #hero > .container {
+        padding-inline: 16px;
+    }
+
+    #hero .hero-img > div {
+        padding: 20px 16px;
+        box-shadow: 0 8px 22px rgba(25, 49, 59, .07);
+    }
+
+    #hero .row > [class*="col-"] {
+        min-width: 0;
+    }
+
+    #hero .col-md-6 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    #hero .float-end {
+        float: none !important;
+    }
+
+    #hero .btn {
+        width: 100%;
+    }
+
+    #hero .input-group > .btn {
+        flex: 1 1 100%;
+    }
+
+    .modal-dialog {
+        width: 100%;
+        max-width: none;
+        height: 100%;
+        margin: 0;
+    }
+
+    .modal-content {
+        min-height: 100dvh;
+        max-height: 100dvh;
+        border-radius: 0 !important;
+    }
+
+    .modal-body {
+        padding: 12px !important;
+    }
+
+    .modal-header {
+        padding: 12px;
+    }
+
+    .modal-body .input-group {
+        flex-wrap: wrap;
+    }
+
+    .modal-body .input-group-text {
+        width: 100%;
+        border-radius: 5px 5px 0 0 !important;
+    }
+
+    .modal-body .input-group .form-control {
+        width: 100%;
+        flex: 1 1 100%;
+        border-radius: 0 0 5px 5px !important;
+    }
+
+    .modal-footer {
+        padding: 12px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+    }
+}
